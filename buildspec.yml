@@ -16,7 +16,7 @@ phases:
     commands:
       - aws --version
       - echo "Login to AWS ECR docker registry"
-      - aws ecr get-login-password --region ${AWS_DEFAULT_REGION} | docker login --username AWS --password-stdin ${REGISTRY}
+      - aws ecr get-login-password --region <region> | docker login --username AWS --password-stdin <aws_account_id>.dkr.ecr.<region>.amazonaws.com
   pre_build:
     commands:
       - echo "Export of the image tag for build and push purposes"
